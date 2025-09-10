@@ -10,6 +10,7 @@ function scrollToSection(sectionId) {
 function toggleFAQ(button) {
   const contentId = button.getAttribute('aria-controls');
   const content = document.getElementById(contentId);
+  const chevron = button.querySelector('svg');
   
   if (!content) return;
   
@@ -18,9 +19,11 @@ function toggleFAQ(button) {
   if (isOpen) {
     button.setAttribute('aria-expanded', 'false');
     content.style.display = 'none';
+    if (chevron) chevron.style.transform = 'rotate(0deg)';
   } else {
     button.setAttribute('aria-expanded', 'true');
     content.style.display = 'block';
+    if (chevron) chevron.style.transform = 'rotate(180deg)';
   }
 }
 
@@ -61,10 +64,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const faqButtons = document.querySelectorAll('button[aria-controls]');
   faqButtons.forEach(button => {
     const content = document.getElementById(button.getAttribute('aria-controls'));
+    const chevron = button.querySelector('svg');
+
     if (content) {
       content.style.display = 'none'; // Initially hide all FAQ content
       button.setAttribute('aria-expanded', 'false');
     }
+    if (chevron) {
+        chevron.style.transform = 'rotate(0deg)';
+        chevron.style.transition = 'transform 0.2s ease-in-out';
+    }
+
     button.addEventListener('click', () => toggleFAQ(button));
   });
 
