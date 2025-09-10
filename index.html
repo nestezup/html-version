@@ -34,7 +34,8 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 
   
 <body>
-    <div id="root">
+
+    <div id="root" class="pt-16">
 <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
 <ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
 </ol>
@@ -42,21 +43,32 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false">
 </section>
 <main class="min-h-screen">
-<nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-blue-900/95 backdrop-blur-sm border-b border-blue-800 shadow-sm">
 <div class="container mx-auto px-4">
 <div class="flex items-center justify-between h-16">
-<div class="text-2xl font-black text-primary tracking-tight">Code Data Hunters</div>
-<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 h-9 rounded-full px-6 py-3">지금 바로 신청</button>
+<div class="text-xl font-bold text-white"><a href="index.html">Code Data Hunters</a></div>
+<div class="hidden md:flex items-center space-x-10">
+<a href="#curriculum" class="text-sm font-medium text-blue-100 hover:text-white transition-colors cursor-pointer px-3 py-2">강의소개</a>
+<a href="#pricing" class="text-sm font-medium text-blue-100 hover:text-white transition-colors cursor-pointer px-3 py-2">가격안내</a>
+<a href="#instructor" class="text-sm font-medium text-blue-100 hover:text-white transition-colors cursor-pointer px-3 py-2">강사소개</a>
+<a href="#faq" class="text-sm font-medium text-blue-100 hover:text-white transition-colors cursor-pointer px-3 py-2">FAQ</a>
+</div>
+<div class="md:hidden">
+<button id="mobileMenuButton" class="text-blue-100 hover:text-white">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M3 12h18M3 6h18M3 18h18"></path>
+</svg>
+</button>
+</div>
 </div>
 </div>
 </nav>
-<section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-16">
+<section class="relative min-h-screen flex items-center justify-center pt-16">
 <div class="container mx-auto px-4 py-20">
 <div class="text-center max-w-5xl mx-auto">
 <div class="relative mb-16">
 <img src="/assets/hero-boat.jpg" alt="데이터 헌터에서 실무 자동화 개발자로" class="w-full max-w-3xl mx-auto rounded-3xl shadow-strong">
-<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl">
-</div>
+<div class="absolute inset-0 to-transparent rounded-3xl">
 </div>
 <h1 class="text-5xl md:text-7xl font-black mb-8 text-foreground leading-tight tracking-tight font-serif">데이터 헌터에서<br>
 <span class="text-primary font-black">실무 자동화 개발자로</span>
@@ -65,7 +77,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <div class="max-w-3xl mx-auto space-y-4 mb-8">
 <p class="text-lg md:text-xl text-muted-foreground leading-relaxed break-keep font-light">프로들은 데이터를 이렇게 활용할까?</p>
 <p class="text-lg md:text-xl text-muted-foreground leading-relaxed break-keep font-light">혼자선 막막했던 스크래핑과 자동화...</p>
-<p class="text-lg md:text-xl text-foreground font-semibold leading-relaxed break-keep">끝까지 함께하는 안내자, 개발자 강사와 함께라면 가능합니다.</p>
+<p class="text-lg md:text-xl text-foreground font-semibold leading-relaxed break-keep">저와 함께 해보시겠어요?</p>
 </div>
 <div class="mb-12 space-y-4">
 <div class="text-lg font-bold text-foreground">📅 언제든지 시작 가능한 온라인 강의</div>
@@ -74,7 +86,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
 <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 h-11 text-lg px-8 py-6 rounded-xl shadow-accent">수강 신청하기</button>
-<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background h-11 text-lg px-8 py-6 rounded-xl border-primary text-primary hover:bg-primary hover:text-primary-foreground">커리큘럼 보기</button>
+<button data-scroll-to="curriculum" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background h-11 text-lg px-8 py-6 rounded-xl border-primary text-primary hover:bg-primary hover:text-primary-foreground">커리큘럼 보기</button>
 </div>
 </div>
 </div>
@@ -470,21 +482,63 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 </div>
 </section>
-<section class="py-20 bg-muted/30">
+<section id="instructor" class="py-20 bg-muted/30">
 <div class="container mx-auto px-4">
 <div class="max-w-4xl mx-auto">
 <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-foreground">강사 소개</h2>
-<div class="grid md:grid-cols-3 gap-12 items-center">
-<div class="text-center md:text-left md:col-span-1">
-<img src="/assets/instructor.jpg" alt="개발자 강사" class="w-64 h-64 mx-auto md:mx-0 rounded-2xl shadow-strong object-cover">
+<div class="flex flex-col gap-12 items-center">
+<div class="text-center">
+<img src="/assets/instructor.jpg" alt="개발자 강사" class="w-64 h-64 mx-auto rounded-2xl shadow-strong object-cover">
 </div>
-<div class="md:col-span-2">
+<div class="w-full">
 <div class="space-y-6 p-8 border border-border/50 rounded-2xl bg-card/50">
 <blockquote class="text-xl md:text-2xl font-medium text-foreground leading-relaxed">"저는 화려하지 않아도, 끝까지 함께하는 사람이고 싶습니다."</blockquote>
 <div class="space-y-4 text-muted-foreground">
 <p class="leading-relaxed">엑셀 자동화에서 출발해 지난 몇 년간 프로그래밍과 데이터 스크래핑에 몰입했습니다.</p>
 <p class="leading-relaxed">혼자라면 막막할 길도, 함께라면 분명히 건널 수 있습니다.</p>
 </div>
+
+<!-- 강사 경력 및 프로젝트 이력 -->
+<div class="space-y-6">
+<div class="bg-card/30 p-6 rounded-xl border border-border/30">
+<h4 class="text-lg font-semibold text-foreground mb-4">🎓 강의 경력</h4>
+<div class="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
+<div class="space-y-2">
+<p>• AI 국내 최대 커뮤니티 [지피터스] 스터디장</p>
+<p>• 파이썬 입문 강의</p>
+<p>• 파이썬 코딩필수역량인증 대비반</p>
+<p>• 오프라인 원데이클래스 (파이썬앱 만들기)</p>
+<p>• 셀프호스팅 기초 과정</p>
+</div>
+<div class="space-y-2">
+<p>• 데이터 스크래핑 실무 과정</p>
+<p>• AI 자동화 개발 과정</p>
+<p>• 웹 개발 기초부터 실무까지</p>
+<p>• 비개발자를 위한 프로그래밍</p>
+</div>
+</div>
+</div>
+
+<div class="bg-card/30 p-6 rounded-xl border border-border/30">
+<h4 class="text-lg font-semibold text-foreground mb-4">🛠 주요 프로젝트 포트폴리오</h4>
+<div class="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
+<div class="space-y-2">
+<p><span class="font-medium text-foreground">비즈니스 자동화:</span></p>
+<p>• 투표 개표 시스템 구축</p>
+<p>• 리뷰 스크래핑 관리시스템</p>
+<p>• 쇼핑몰 순위 모니터링 시스템</p>
+<p>• 네이버 플레이스 순위 추적시스템</p>
+</div>
+<div class="space-y-2">
+<p><span class="font-medium text-foreground">웹 애플리케이션:</span></p>
+<p>• 캠핑장 예약 시스템</p>
+<p>• 미용실 예약 관리시스템</p>
+<p>• 리뷰 통합 관리시스템</p>
+</div>
+</div>
+</div>
+</div>
+
 <div class="bg-gradient-to-r from-primary/10 to-accent/10 p-6 rounded-xl border border-primary/20">
 <p class="text-foreground font-semibold">💡 실무 중심의 교육철학으로 여러분의 자동화 개발 여정을 끝까지 함께합니다.</p>
 </div>
@@ -494,7 +548,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 </div>
 </section>
-<section class="py-20">
+<section id="pricing" class="py-20">
 <div class="container mx-auto px-4">
 <div class="max-w-6xl mx-auto">
 <h2 class="text-3xl md:text-4xl font-black text-center mb-16 text-foreground tracking-tight font-serif">가격 안내</h2>
@@ -504,6 +558,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-medium hover:shadow-strong transition-all duration-300 flex flex-col h-full border-border/50">
 <div class="flex flex-col space-y-1.5 p-6 text-center pb-4">
 <h3 class="font-semibold tracking-tight text-lg mb-2">온라인1</h3>
+<div class="text-xs text-primary font-medium mb-2 bg-primary/10 px-3 py-1 rounded-full inline-block">👤 초보자·비개발자 추천</div>
 <div class="space-y-1 h-20 flex flex-col justify-center">
 <div class="text-sm text-muted-foreground line-through">
 </div>
@@ -559,6 +614,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative shadow-medium hover:shadow-strong transition-all duration-300 flex flex-col h-full border-border/50">
 <div class="flex flex-col space-y-1.5 p-6 text-center pb-4">
 <h3 class="font-semibold tracking-tight text-lg mb-2">온라인2</h3>
+<div class="text-xs text-orange-600 font-medium mb-2 bg-orange-100 px-3 py-1 rounded-full inline-block">🚀 셀러·사업자 추천</div>
 <div class="space-y-1 h-20 flex flex-col justify-center">
 <div class="text-sm text-muted-foreground line-through">
 </div>
@@ -617,6 +673,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div class="flex flex-col space-y-1.5 p-6 text-center pb-4">
 <h3 class="font-semibold tracking-tight text-lg mb-2">패키지 (온라인1+2)</h3>
+<div class="text-xs text-purple-600 font-medium mb-2 bg-purple-100 px-3 py-1 rounded-full inline-block">💎 완전 초보→실무자 완성</div>
 <div class="space-y-1 h-20 flex flex-col justify-center">
 <div class="text-sm text-muted-foreground line-through">₩299,000</div>
 <div class="text-2xl font-bold text-foreground">₩259,000</div>
@@ -728,14 +785,14 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 </div>
 </section>
-<section class="py-20 bg-muted/20">
+<section id="faq" class="py-20 bg-muted/20">
 <div class="container mx-auto px-4">
 <div class="max-w-4xl mx-auto">
 <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-foreground">자주 묻는 질문</h2>
 <div class="space-y-4" data-orientation="vertical">
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:r1:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r0:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:r1:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r0:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q1. 저는 프로그래밍을 거의 못하는데, 들어도 될까요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -751,7 +808,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:r3:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r2:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:r3:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r2:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q2. 온라인 강의는 실시간인가요, 녹화인가요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -767,7 +824,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:r5:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r4:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:r5:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r4:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q3. 오프라인 수업에 가면 온라인 강의도 포함되나요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -783,7 +840,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:r7:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r6:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:r7:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r6:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q4. 온라인1과 온라인2는 어떤 차이가 있나요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -799,7 +856,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:r9:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r8:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:r9:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:r8:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q5. 회사 업무에도 활용할 수 있나요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -815,7 +872,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:rb:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:ra:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:rb:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:ra:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q6. 강의 듣다가 모르는 게 있으면 질문할 수 있나요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -831,7 +888,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:rd:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:rc:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:rd:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:rc:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q7. 환불 정책은 어떻게 되나요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -847,7 +904,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:rf:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:re:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:rf:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:re:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q8. 준비물은 무엇인가요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -863,7 +920,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:rh:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:rg:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:rh:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:rg:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q9. 오프라인 클래스 정원은 몇 명인가요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -879,7 +936,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 </div>
 <div data-state="closed" data-orientation="vertical" class="bg-card rounded-xl px-6 border border-border/50 shadow-soft">
 <h3 data-orientation="vertical" data-state="closed" class="flex">
-<button type="button" aria-controls="radix-:rj:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:ri:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="" onclick="toggleFAQItem(this)">
+<button type="button" aria-controls="radix-:rj:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:ri:" class="flex flex-1 items-center justify-between font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline py-6" data-radix-collection-item="">
 <span class="font-semibold text-foreground pr-4">Q10. 중복 결제가 되나요?</span>
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
 <path d="m6 9 6 6 6-6">
@@ -902,7 +959,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <div class="max-w-4xl mx-auto text-center">
 <div class="relative mb-12">
 <img src="/assets/final-cta.jpg" alt="함께 배움의 여정을 시작하세요" class="w-full max-w-2xl mx-auto rounded-2xl shadow-strong">
-<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl">
+<div class="absolute inset-0 from-black/30 to-transparent rounded-2xl">
 </div>
 </div>
 <h2 class="text-3xl md:text-5xl font-bold mb-8 text-primary leading-tight">뉴스 긁고, 리뷰 달고, 앱까지 완성.</h2>
@@ -945,41 +1002,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
 <div class="glasp-extension" style="display: block; width: unset; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; bottom: 16px; right: 16px; z-index: 9999;">
 </div>
 <script src="script.js"></script>
-<script>
-function toggleFAQItem(button) {
-  var contentId = button.getAttribute('aria-controls');
-  var content = document.getElementById(contentId);
-  var chevron = button.querySelector('svg');
-  
-  if (content.style.display === 'none') {
-    content.style.display = 'block';
-    if (chevron) chevron.style.transform = 'rotate(0deg)';
-  } else {
-    content.style.display = 'none';
-    if (chevron) chevron.style.transform = 'rotate(180deg)';
-  }
-}
 
-// 페이지 로드 후 초기화
-document.addEventListener('DOMContentLoaded', function() {
-  var allButtons = document.querySelectorAll('button[aria-controls]');
-  
-  allButtons.forEach(function(button) {
-    var contentId = button.getAttribute('aria-controls');
-    var content = document.getElementById(contentId);
-    var chevron = button.querySelector('svg');
-    
-    // 초기 상태 설정
-    button.setAttribute('aria-expanded', 'false');
-    content.removeAttribute('hidden'); // hidden 속성 제거
-    content.style.cssText = 'display: none !important;';
-    if (chevron) {
-      chevron.style.transform = 'rotate(180deg)'; // 닫힌 상태는 180도
-      chevron.style.transition = 'transform 0.3s ease';
-    }
-  });
-});
-</script>
 </body>
 
 </html>

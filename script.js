@@ -1,63 +1,78 @@
-// Smoothly scroll to the curriculum section
-function scrollToCurriculum() {
-  var el = document.getElementById('curriculum');
-  if (!el) return;
-  try {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } catch (e) {
-    // Fallback for very old browsers
-    var top = 0;
-    var node = el;
-    while (node) { top += node.offsetTop || 0; node = node.offsetParent; }
-    window.scrollTo(0, top);
+// Smoothly scroll to a section
+function scrollToSection(sectionId) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
 // Toggle FAQ item open/close
 function toggleFAQ(button) {
-  // Find the content div that corresponds to this button
-  var contentId = button.getAttribute('aria-controls');
-  var content = document.getElementById(contentId);
+  const contentId = button.getAttribute('aria-controls');
+  const content = document.getElementById(contentId);
   
   if (!content) return;
   
-  var isOpen = button.getAttribute('aria-expanded') === 'true';
+  const isOpen = button.getAttribute('aria-expanded') === 'true';
   
-  // Toggle the state
   if (isOpen) {
-    // Close
     button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('data-state', 'closed');
-    content.setAttribute('data-state', 'closed');
     content.style.display = 'none';
-    content.setAttribute('hidden', '');
   } else {
-    // Open
     button.setAttribute('aria-expanded', 'true');
-    button.setAttribute('data-state', 'open');
-    content.setAttribute('data-state', 'open');
     content.style.display = 'block';
-    content.removeAttribute('hidden');
   }
 }
 
-// Progressive enhancement: if URL has #curriculum, scroll after load
-if (location.hash === '#curriculum') {
-  window.addEventListener('load', function () {
-    var el = document.getElementById('curriculum');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  });
+// Toggle mobile menu
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  if (menu) {
+    menu.classList.toggle('hidden');
+  }
 }
 
-// Initialize FAQ toggles when page loads
+// DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
-  // Add click event listeners to all FAQ buttons
-  var faqButtons = document.querySelectorAll('[data-radix-collection-item]');
-  
-  faqButtons.forEach(function(button) {
-    button.addEventListener('click', function(e) {
+  // Add smooth scroll to all navbar links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      toggleFAQ(this);
+      const sectionId = this.getAttribute('href').substring(1);
+      scrollToSection(sectionId);
+
+      // If in mobile view, close the menu after clicking a link
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        toggleMobileMenu();
+      }
     });
   });
+
+  // Add smooth scroll to all buttons with data-scroll-to attribute
+  document.querySelectorAll('button[data-scroll-to]').forEach(button => {
+    button.addEventListener('click', function () {
+      const sectionId = this.getAttribute('data-scroll-to');
+      scrollToSection(sectionId);
+    });
+  });
+
+  // Initialize FAQ toggles
+  const faqButtons = document.querySelectorAll('button[aria-controls]');
+  faqButtons.forEach(button => {
+    const content = document.getElementById(button.getAttribute('aria-controls'));
+    if (content) {
+      content.style.display = 'none'; // Initially hide all FAQ content
+      button.setAttribute('aria-expanded', 'false');
+    }
+    button.addEventListener('click', () => toggleFAQ(button));
+  });
+
+  
+
+  // Mobile menu button
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+  }
 });
